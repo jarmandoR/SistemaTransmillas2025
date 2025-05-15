@@ -883,15 +883,15 @@ if (is_uploaded_file($_FILES['param501']['tmp_name'])){
 		$valores[7]=$sql; $valores[4]="seguimientouser.php"; $valores[8]=1; 
 	break;
 	case "Agregar festivos":
-		error_reporting(E_ALL);
-		ini_set('display_errors', 1);
+		// error_reporting(E_ALL);
+		// ini_set('display_errors', 1);
 		$fecha=$param6;
 
 		$fechaCompleta=date("$param6 H:i:s");	
 		// $fecha=date("Y-m-d");
 		// $param3=date("Y-m-d H:i:s");
 
-		echo$sql2="SELECT idusuarios,usu_nombre,usu_identificacion,usu_tipocontrato,usu_fechalicencia,usu_idsede FROM usuarios inner join hojadevida on hoj_cedula=usu_identificacion WHERE usu_estado = '1'and usu_filtro='1' and usu_tipocontrato='Empresa'   ORDER BY usu_nombre  asc ";
+		$sql2="SELECT idusuarios,usu_nombre,usu_identificacion,usu_tipocontrato,usu_fechalicencia,usu_idsede FROM usuarios inner join hojadevida on hoj_cedula=usu_identificacion WHERE usu_estado = '1'and usu_filtro='1' and usu_tipocontrato='Empresa'   ORDER BY usu_nombre  asc ";
 
 		
 		
