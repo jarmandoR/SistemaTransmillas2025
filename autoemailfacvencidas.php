@@ -1,48 +1,43 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+var facturasVencidas = [];
+function sendEmail(idfac,email,body,asunto){
 
-function sendEmail(idfac,email,body){
+
+        
+
+    console.log(idfac+"_"+email+"_"+body);
 
 
-    
-// const fileNames = 
-// let arrayParam = encodeURIComponent(JSON.stringify(fileNames));
-// console.log(fileNames);
-console.log(idfac+"_"+email+"_"+body);
+    const formData = new FormData();
+    var cond = 1;
+    //agregar correo
+    formData.append('correo', email);
+    //agregar correo
+    formData.append('body', body);
+    formData.append('idfac', idfac);
+    formData.append('cond', cond);
+    formData.append('asunto', asunto);
 
-// const email = document.getElementById('param2');
-// const body = document.getElementById('param5');
-const formData = new FormData();
-var cond = 1;
-//agregar correo
-formData.append('correo', email);
-//agregar correo
-formData.append('body', body);
-formData.append('idfac', idfac);
-formData.append('cond', cond);
 
-// const loadingElement = document.getElementById('loading');
 
-// Mostrar el GIF de carga
-// loadingElement.style.display = 'block';
-// Enviar datos al servidor
-fetch('email_facvencida.php', {
-    method: 'POST',
-    body: formData
-})
-.then(response => response.text())
-.then(result => {
-    console.log(result);
-    // alert(result);
-    // idsSeleccionados = [];
-})
-.catch(error => {
-    console.error('Error:', error);
-    // alert('Error al enviar el correo');
-}).finally(() => {
-    // // Ocultar el GIF de carga
-    // loadingElement.style.display = 'none';
-});
+
+    fetch('email_facvencida.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+        console.log(result);
+        // alert(result);
+
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        
+    }).finally(() => {
+
+    });
 
 }
 </script>
@@ -77,27 +72,31 @@ $resultado="";
 // $DB->Execute($sql); 
 $result2 = mysqli_query($link, $sql);
 $guias=0;
+$val=0;
 	while($rw1=mysqli_fetch_row($result2))
 	{
         $fechaVence=$rw1[9];
         $numero=$rw1[7];
         $id_p=$rw1[0];
         if ($rw1[2]=="EXTERNOS") {
-            echo$numero;
-        echo"Es externo <br>";
+
 
         $email="$rw1[26]";
         
             # code...
         
-             $mensaje="Estimado cliente le recordamos que la factura # ".$numero."  se encuentra vencida,si ya realizó su pago por favor enviar el soporte a  esté correo";
-
+            $mensaje="Estimado cliente le recordamos que la factura # ".$numero."  se encuentra vencida,si ya realizó su pago por favor enviar el soporte a  esté correo";
+            $asunto="Factura Vencida Transmillas #".$numero."";
         
 
 
             if ( $fechaActual>=$fechaVence) {
                 if ($email!="") {
-                    echo"<script>sendEmail($id_p,\"$email\",\"$mensaje\");</script>"; 
+                    echo$numero;
+                    echo"Es externo Pendiente ".$id_p."-".$email."-".$mensaje."<br>";
+                    // echo"<script>sendEmail($id_p,\"$email\",\"$mensaje\",\"$asunto\");</script>"; 
+                    echo "<script>facturasVencidas.push({id: $id_p, email: '$email', mensaje: `$mensaje`, asunto: `$asunto`});</script>";
+                    $val++;
                     // echo"".$id_p.$email.$mensaje;
                     $resultado.="Factura $numero Vencida el $fechaVence Se envia al correo $email Alerta <br> \n";
 
@@ -107,8 +106,8 @@ $guias=0;
                     $cuen=mysqli_fetch_row($result5);
                     
                     $nummensajes=$cuen[0]+1;
-                    $sqlsqlupdate = "UPDATE `facturascreditos` SET fac_correoven='$nummensajes'  WHERE idfacturascreditos='$id_p'";
-                    $update = mysqli_query($link, $sqlsqlupdate);
+                    // $sqlsqlupdate = "UPDATE `facturascreditos` SET fac_correoven='$nummensajes'  WHERE idfacturascreditos='$id_p'";
+                    // $update = mysqli_query($link, $sqlsqlupdate);
                 }else {
                     $resultado.="Factura $numero Vencida el $fechaVence No se encontro correo del credito $rw1[2]  <br> \n";
                 }
@@ -132,14 +131,17 @@ $guias=0;
 
             $email="$ema[0]";
             $mensaje="Estimado cliente le recordamos que la factura # ".$numero."  se encuentra vencida,si ya realizó su pago por favor enviar el soporte a  esté correo";
-
+            $asunto="Factura Vencida Transmillas #".$numero."";
             
  
 
                 if ( $fechaActual>=$fechaVence) {
                     if ($email!="") {
-                        echo"<script>sendEmail($id_p,\"$email\",\"$mensaje\");</script>"; 
+                        echo$numero;
+                        echo$rw2[1]." Pendiente ".$id_p."-".$email."-".$mensaje."<br>";
+                        // echo"<script>sendEmail($id_p,\"$email\",\"$mensaje\",\"$asunto\");</script>"; 
                         // echo"".$id_p.$email.$mensaje;
+                        $val++;
                         $resultado.="Factura $numero Vencida el $fechaVence Se envia al correo $email Alerta <br> \n";
 
 
@@ -148,8 +150,8 @@ $guias=0;
                         $cuen=mysqli_fetch_row($result5);
                         
                         $nummensajes=$cuen[0]+1;
-                        $sqlsqlupdate = "UPDATE `facturascreditos` SET fac_correoven='$nummensajes'  WHERE idfacturascreditos='$id_p'";
-                        $update = mysqli_query($link, $sqlsqlupdate);
+                        // $sqlsqlupdate = "UPDATE `facturascreditos` SET fac_correoven='$nummensajes'  WHERE idfacturascreditos='$id_p'";
+                        // $update = mysqli_query($link, $sqlsqlupdate);
                     }else {
                         $resultado.="Factura $numero Vencida el $fechaVence No se encontro correo del credito $rw1[2]  <br> \n";
                     }
@@ -165,9 +167,32 @@ $guias=0;
         $resultado.= "_".$fechaActual;
     }
 
-
+    Echo$val;
     // echo$resultado;
 
 
 ?>
+<script>
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
+async function enviarCorreosSecuenciales() {
+    for (let i = 0; i < facturasVencidas.length; i++) {
+        const f = facturasVencidas[i];
+        console.log(`Enviando correo ${i + 1} de ${facturasVencidas.length}...`);
+        sendEmail(f.id, f.email, f.mensaje, f.asunto);
+        await delay(15000); // Esperar 15 segundos antes del siguiente envío
+    }
+    console.log("Todos los correos han sido enviados.");
+}
+
+// Iniciar envío después de 2 segundos para asegurar carga completa
+setTimeout(() => {
+    if (facturasVencidas.length > 0) {
+        enviarCorreosSecuenciales();
+    } else {
+        console.log("No hay facturas vencidas para enviar.");
+    }
+}, 2000);
+</script>

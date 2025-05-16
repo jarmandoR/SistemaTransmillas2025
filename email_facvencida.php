@@ -14,6 +14,8 @@ use PHPMailer\PHPMailer\Exception;
 
 // Crear una nueva instancia de PHPMailer
 $mail = new PHPMailer(true);
+// $mail->SMTPDebug = 2; // O usa 3 o 4 si quieres aún más detalle
+// $mail->Debugoutput = 'html';
 
 try {
 
@@ -35,14 +37,14 @@ try {
 
     $contenido=$_POST['body'];
     $idFactura=$_POST['idfac'];
-
+    $asunto=$_POST['asunto'];
 
 
     // Adjuntar imágenes embebidas
     $mail->AddEmbeddedImage('images/logoCorreo.jpg', 'empresa_logo');
     // Contenido del correo
     $mail->isHTML(true);
-    $mail->Subject = 'Factura vencida Transmillas';
+    $mail->Subject = ''.$asunto.'';
 
     $contenidoHTML = '
     <html>
@@ -76,7 +78,7 @@ try {
 
 
     // Enviar el correo
-    $mail->send();
+    // $mail->send();
     echo 'El mensaje ha sido enviado';
 
 
