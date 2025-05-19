@@ -94,10 +94,10 @@ $fechafin=$_GET["fechafin"];
    
     $this->Ln(20);
 
-    $this->SetFont('Arial', 'B', 25); // Establece la fuente, el estilo (negrita) y el tamaño (12 puntos)
+    $this->SetFont('Arial', 'B', 15); // Establece la fuente, el estilo (negrita) y el tamaño (12 puntos)
     $this->SetY($this->GetY() -15); // Mueve hacia abajo
-        $this->Cell(50, 10, 'FORMATO  DE SOLICITUD DE PRESTAMO', 0, 1, 'C'); // Agrega un título centrado
-        $this->Cell(50, 10, 'TRANSMILLAS LOGISTICA Y TRANSPORTE SAS', 0, 1, 'C');
+        $this->Cell(150, 10, 'FORMATO  DE SOLICITUD DE PRESTAMO', 0, 1, 'C'); // Agrega un título centrado
+        $this->Cell(150, 10, 'TRANSMILLAS LOGISTICA Y TRANSPORTE SAS', 0, 1, 'C');
         // $posX = $this->GetPageWidth() - 50; // Ajusta el valor según sea necesario
         
         // // Agrega la imagen al lado derecho del encabezado
