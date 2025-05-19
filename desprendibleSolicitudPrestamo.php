@@ -174,8 +174,9 @@ $pdf->SetY($pdf->GetY() +5); // Mueve hacia abajo
 // Lista 1
 
 $pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-$pdf->Cell(60, 5, 'DATOS DEL SOLICITANTE', 1);
-$pdf->Ln(); // Salto de línea
+$pdf->Cell(60, 5, 'Concepto ', 1);
+$pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
+$pdf->Cell(35, 5, 'Valor ', 1);
 
 $pdf->Ln(); // Salto de línea
 // Lista 2
