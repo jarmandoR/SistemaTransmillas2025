@@ -207,26 +207,26 @@ $pdf->Rect(10, 72, 95, 15); // Dibuja un rectángulo con relleno
 
 
 
+
+
+$pdf->SetY($pdf->GetY() +5); // Mueve hacia abajo
+
+
+
+
 // Lista 1
 
 $pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
 $pdf->Cell(60, 5, 'Concepto ', 1);
 $pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
 $pdf->Cell(35, 5, 'Valor ', 1);
-$pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-$pdf->Cell(55, 5, 'Concepto ', 1);
-$pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-$pdf->Cell(40, 5, 'Valor ', 1);
+
 $pdf->Ln(); // Salto de línea
 // Lista 2
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(60, 5, 'Dias Trabajados', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(35, 5, ''.$diastrabajados.'', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(55, 5, '', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(40, 5, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 3
@@ -236,10 +236,6 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(60, 5, 'SUELDO', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(35, 5, ''.$sueldo_formateado.'', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(55, 5, 'SALUD', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(40, 5, ''.$salud_formateado.'', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 4
@@ -249,10 +245,6 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(60, 5, 'AUXILIO DE TRANSPORTE', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(35, 5, ''.$auxilitrans_formateado.'', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(55, 5, 'PENSION', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(40, 5, ''.$pension_formateado.'', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 5
@@ -261,10 +253,6 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(60, 5, 'HORAS EXTRA', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(35, 5, '', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(55, 5, 'F.S.P', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(40, 5, '', 1);
 $pdf->Ln(); // Salto de línea
 // Lista 6
 
@@ -272,10 +260,6 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(60, 5, 'DIAS DE INCAPACIDAD', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(35, 5, ''.$diasIncapacidad.'', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(55, 5, 'DESCUENTOS', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(40, 5, '', 1);
 $pdf->Ln(); // Salto de línea
 // Lista 7
 $pagdiasinca_formateado = number_format($pagdiasinca, 0, ',', '.');
@@ -284,10 +268,6 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(60, 5, 'PAGO DE DIAS DE INCAPACIDAD', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(35, 5, ''.$pagdiasinca_formateado.'', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(55, 5, 'PRESTAMOS', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(40, 5, ''.$prestamos.'', 1);
 $pdf->Ln(); // Salto de línea
 // Lista 8
 $prestamos_formateado = number_format($prestamos, 0, ',', '.');
@@ -296,10 +276,6 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(60, 5, 'OTROS NO CONSTITUYE SALARIO', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(35, 5, '', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(55, 5, '', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(40, 5, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 9
@@ -309,10 +285,6 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(60, 5, 'DIAS VACACIONES', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(35, 5, ''.$diasVacaciones.'', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(55, 5, '', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(40, 5, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 9
@@ -322,10 +294,7 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(60, 5, 'PAGO DIAS VACACIONES', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(35, 5, ''.$valordiasVacaciones_formateado.'', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(55, 5, '', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(40, 5, '', 1);
+$pdf->SetFont('Arial', '', 10); 
 $pdf->Ln(); // Salto de línea
 
 // Lista 10
@@ -335,10 +304,6 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(60, 5, 'AJUSTES', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(35, 5, ''.$ajustessumB.'', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(55, 5, 'AJUSTES', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(40, 5, ''.$ajustesresB.'', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 11
@@ -348,14 +313,7 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(60, 10, 'TOTAL DEVENGADO', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(35, 10, ''.$totaldeveng_formateado.'', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(55, 10, 'TOTAL DEDUCCIONES', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(40, 10, ''.$totaldeduccion_formateado.'', 1);
 $pdf->Ln(); // Salto de línea
-
-
-
 
 
 
