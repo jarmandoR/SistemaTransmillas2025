@@ -209,7 +209,7 @@ $pdf->Rect(10, 72, 95, 15); // Dibuja un rectángulo con relleno
 // Dibuja el segundo rectángulo
 $pdf->SetLineWidth(0.5); // Establece el ancho de línea
 $pdf->SetDrawColor(0, 0, 0); // Establece el color del borde (negro en este caso)
-$pdf->Rect(105, 72, 95,15); // Dibuja un rectángulo sin relleno
+$pdf->Rect(10, 72, 95,15); // Dibuja un rectángulo sin relleno
 
 
         //   // Definir borde negro alrededor del encabezado
