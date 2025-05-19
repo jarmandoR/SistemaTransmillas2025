@@ -101,7 +101,7 @@ $fechafin=$_GET["fechafin"];
         // $posX = $this->GetPageWidth() - 50; // Ajusta el valor según sea necesario
         
         // // Agrega la imagen al lado derecho del encabezado
-        // $this->Image('images/logoDesprendible.jpg', $posX, $this->GetY(), 50); // Cambia 'ruta/a/tu/imagen.png' a la ruta de tu imagen y ajusta el tamaño si es necesario
+        // $this->Image('images/logoDesprendible.jpg', $posX, $this->GetY(), 20); // Cambia 'ruta/a/tu/imagen.png' a la ruta de tu imagen y ajusta el tamaño si es necesario
 
 
         $imageWidth = 35; // Ancho de la imagen
