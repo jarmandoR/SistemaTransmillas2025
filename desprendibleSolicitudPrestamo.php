@@ -181,6 +181,7 @@ $pdf->SetY($pdf->GetY() +5); // Mueve hacia abajo
 
 $pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
 $pdf->Cell(60, 5, 'DATOS DEL SOLICITANTE ', 1);
+$pdf->Cell(60, 5, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 2
