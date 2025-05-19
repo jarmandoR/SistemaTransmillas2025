@@ -78,7 +78,7 @@ try {
 
 
     // Enviar el correo
-    // $mail->send();
+    $mail->send();
     echo 'El mensaje ha sido enviado';
 
 
