@@ -174,10 +174,22 @@ $pdf->Rect(10, 72, 95, 15); // Dibuja un rectángulo con relleno
 
 $pdf->SetY($pdf->GetY() +5); // Mueve hacia abajo
 
+$valorTotal=($totaldeveng+$ajustessumB)-($totaldeduccion+$ajustesresB);
+$valorTotal_formateado = number_format($valorTotal, 0, ',', '.');
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(190, 10, 'TOTAL                                                                                                                    VALOR A PAGAR:  '.$valorTotal_formateado.'', 1);
+// $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+// $pdf->Cell(95, 10, ' VALOR A PAGAR ', 1);
+
+
 // Lista 1
 
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(190, 10, 'VALOR EN LETRAS:  '.$valorEnLetras_en_mayusculas.' PESOS', 1);
+$pdf->Ln(); // Salto de línea
+
 $pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-$pdf->Cell(190, 10, 'holaaaa' );
+$pdf->Cell(60, 5, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 2
