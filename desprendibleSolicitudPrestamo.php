@@ -178,10 +178,9 @@ $pdf->SetY($pdf->GetY() +5); // Mueve hacia abajo
 
 
 // Lista 1
-$pdf->SetFont('Arial', 'B', 10); // Fuente en negrita
-// Obtener ancho útil de la página
-$ancho_pagina = $pdf->GetPageWidth() - $pdf->lMargin - $pdf->rMargin;
-$pdf->Cell($ancho_pagina, 5, 'DATOS DEL SOLICITANTE', 1);
+
+$pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
+$pdf->Cell(60, 5, 'DATOS DEL SOLICITANTE ', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 2
