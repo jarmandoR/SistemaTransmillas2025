@@ -98,6 +98,7 @@ $fechafin=$_GET["fechafin"];
     $this->SetY($this->GetY() -15); // Mueve hacia abajo
         $this->Cell(150, 10, 'FORMATO  DE SOLICITUD DE PRESTAMO', 0, 1, 'C'); // Agrega un título centrado
         $this->Cell(150, 10, 'TRANSMILLAS LOGISTICA Y TRANSPORTE SAS', 0, 1, 'C');
+        $this->Cell(150, 10, '', 0, 1, 'C');
         // $posX = $this->GetPageWidth() - 50; // Ajusta el valor según sea necesario
         
         // // Agrega la imagen al lado derecho del encabezado
@@ -109,7 +110,7 @@ $fechafin=$_GET["fechafin"];
         $availableWidth = $this->GetPageWidth() - $textWidth - $imageWidth; // Ancho disponible para la imagen
         $posX = $this->GetPageWidth() - $availableWidth; // Posición x para la imagen
         // Calcula la posición y para la imagen (subir un poco la imagen)
-        $posY = $this->GetY() -30; // Ajusta el valor según sea necesario
+        $posY = $this->GetY() -20; // Ajusta el valor según sea necesario
 
         // Agrega la imagen al lado derecho del encabezado
         $this->Image('images/logoDesprendible.jpg', $posX, $posY, $imageWidth); // Cambia 'ruta/a/tu/imagen.png' a la ruta de tu imagen y ajusta el tamaño si es necesario
