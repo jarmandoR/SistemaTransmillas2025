@@ -130,49 +130,6 @@ $fechafin=$_GET["fechafin"];
         // $this->SetY($this->GetY() -2); // Mueve hacia abajo
         // $this->Cell(173, 10, 'No DAVIVIENDA '.$cedula.'                                                               BOGOTA', 0, 1, 'C');
 
-        
-        $this->SetY(+30);
-        $this->SetX(+20);
-        $this->SetDrawColor(255, 255, 255); // Establecer color de borde en blanco
-        $this->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-        $this->Cell(100, 7, 'CEDULA:  '.$cedula.'', 1);
-        $this->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-        $this->Cell(35, 7, '', 1);
-        $this->Ln(); // Salto de línea
-
-        $this->SetX(+20);
-        $this->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-        $this->Cell(100, 7, 'NOMBRE:     '.$nombre.'', 1);
-        $this->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-        $this->Cell(35, 7, '', 1);
-        $this->Ln(); // Salto de línea
-        
-        $this->SetX(+20);
-        $this->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-        $this->Cell(100, 7, 'Cargo:       '.$cargo.'', 1);
-        $this->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-        $this->Cell(35, 7, '', 1);
-        $this->Ln(); // Salto de línea
-        
-        $this->SetX(+20);
-        $this->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-        $this->Cell(100, 7, 'Periodo     del:  '.$fechaini.'  Al: '.$fechafin.'', 1);
-        $this->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-        $this->Cell(35, 7, '', 1);
-        $this->Ln(); // Salto de línea
-
-        $this->SetX(+20);
-        $this->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-        $this->Cell(100, 7, 'No DAVIVIENDA    ', 1);
-        $this->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-        $this->Cell(35, 7, ''.$sede.'', 1);
-        $this->Ln(); // Salto de línea
-}
-
-
-
-
-
 
 // Pie de página
 function Footer()
@@ -217,9 +174,8 @@ $pdf->SetY($pdf->GetY() +5); // Mueve hacia abajo
 // Lista 1
 
 $pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-$pdf->Cell(60, 5, 'Concepto ', 1);
-$pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
-$pdf->Cell(35, 5, 'Valor ', 1);
+$pdf->Cell(60, 5, 'DATOS DEL SOLICITANTE', 1);
+$pdf->Ln(); // Salto de línea
 
 $pdf->Ln(); // Salto de línea
 // Lista 2
