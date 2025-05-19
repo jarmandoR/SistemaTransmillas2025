@@ -206,40 +206,6 @@ $pdf->SetDrawColor(0, 0, 0); // Establece el color del borde (negro en este caso
 $pdf->Rect(10, 72, 95, 15); // Dibuja un rectángulo con relleno
 
 
-// Dibuja el segundo rectángulo
-$pdf->SetLineWidth(0.5); // Establece el ancho de línea
-$pdf->SetDrawColor(0, 0, 0); // Establece el color del borde (negro en este caso)
-$pdf->Rect(10, 72, 95,15); // Dibuja un rectángulo sin relleno
-
-
-        //   // Definir borde negro alrededor del encabezado
-        //   $pdf->SetLineWidth(0.2); // Establece el ancho de línea
-        //   $pdf->SetDrawColor(0, 0, 0); // Establece el color del borde (negro)
-        //   $pdf->Rect(12, 90, 185, 100, 'D'); // Dibuja un rectángulo con borde
-
-
-            //         // Dibuja el primer rectángulo
-            // $pdf->SetLineWidth(0.2); // Establece el ancho de línea
-            // $pdf->SetDrawColor(0, 0, 0); // Establece el color del borde (negro en este caso)
-            // $pdf->Rect(12, 90, 92, 10); // Dibuja un rectángulo con relleno
-
-
-            // // Dibuja el segundo rectángulo
-            // $pdf->SetLineWidth(0.2); // Establece el ancho de línea
-            // $pdf->SetDrawColor(0, 0, 0); // Establece el color del borde (negro en este caso)
-            // $pdf->Rect(105, 90, 92,10); // Dibuja un rectángulo sin relleno
-
-
-
-
-$pdf->Cell(190, 10, 'DEVENGADOS                                                                      DEDUCCIONES', 0, 1, 'C');
-
-
-
-$pdf->SetY($pdf->GetY() +5); // Mueve hacia abajo
-
-
-
 
 // Lista 1
 
