@@ -185,7 +185,7 @@ $pdf->Cell(190, 10, 'TOTAL                                                      
 // Lista 1
 
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(190, 10, 'VALOR EN LETRAS:  '.$valorEnLetras_en_mayusculas.' PESOS', 1);
+$pdf->Cell(190, 10, 'holaaaaaa', 1);
 $pdf->Ln(); // Salto de línea
 
 $pdf->SetFont('Arial', 'B', 10); // Establecer fuente en negrita
