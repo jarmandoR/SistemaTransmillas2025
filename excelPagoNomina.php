@@ -750,6 +750,7 @@ function diasSegundaQuince($year, $month) {
                       }else if ($rw1[16]=="AHORROS") {
                           $tipoCuenta="CA";
                       }
+                      
                       if ($rw1[17]=="DAVIVIENDA" or $rw1[17]=="DAVIPLATA") {
                           $codigoBanco="51";
                       }
@@ -1771,6 +1772,7 @@ function diasSegundaQuince($year, $month) {
                       }else if ($rw1[16]=="AHORROS") {
                           $tipoCuenta="CA";
                       }
+                      echo'if ('.$rw1[17].'=="DAVIVIENDA" or '.$rw1[17].'=="DAVIPLATA") {';
                       if ($rw1[17]=="DAVIVIENDA" or $rw1[17]=="DAVIPLATA") {
                           $codigoBanco="51";
                       }

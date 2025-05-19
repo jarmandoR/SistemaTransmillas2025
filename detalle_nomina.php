@@ -3,26 +3,7 @@
 
 
 
-	function confirmar(valor,item){
 
-
-// var input = document.getElementById("miInput");
-// var idservicio = input.value;
-// var valor = $(this).val();
-// var descripcion=document.getElementById("des_"+$(this).attr('name')).value;
-// var idservicio=document.getElementById(item).value;
-// var piezasg=document.getElementById("piezasg_"+item).value;
-// var guia=document.getElementById("guia_"+item).value;
-
-// event.preventDefault();
-// $(this).closest('tr').remove();
-
-
-
-
-
-alert("hola");
-}
 
 
 </script>
@@ -750,6 +731,34 @@ $totalQuincena=($totalQuincena+$devretegarantia+$ajustessumB)-($ajustesresB+$val
 			echo "<td>$rw1[6]</td>";
 			echo "<td>$rw1[13]</td>";
 			$totalDevengPres=$totalDevengPres+$totalQuincena;
+			echo"<td><input type='checkbox'  onchange='selecionado1(
+				$idusuario,
+				\"$nombreCompleto\",
+				\"$rw1[5]\",
+				\"$diassitrabajoParaMostrar\",
+				\"$diasDescanso\",
+				\"$valordediastrabajados_formateado\",
+				\"$totalauxilio\",
+				\"$diasnotrabajo\",
+				\"$diasincapacidad\",
+				\"$valorDiasIncapadidad_formateado\",
+				\"$diasVacaciones\",
+				\"$valorDiasVacaciones_formateado\",
+				\"$permisosLic\",
+				\"$diasPerLicBasValortotalfinal_formateado\",
+				\"$valorSalud_formateado\",
+				\"$valorPension_formateado\",
+				\"$TotalDebe\",
+				\"$restaABasico\",
+				\"$TotalDevengado_formateado\",
+				\"$valorHorasDomini_formateado\",
+				\"$cargosaldo[4]\",
+				\"$totalOtrosDias_formateado\",
+				\"$rw10[0]\",
+				\"$valorRecogidas_formateado\",
+				\"$restaAOtros\",
+				\"$totalOtrosAPagar_formateado\",
+				\"$TotalDevengoyOtros_formateado\")' class='checkbox' id='".$idusuario."s1' value='$idusuario'></td>";
 		  }
 
 		}
@@ -1036,7 +1045,8 @@ ORDER BY hoj_nombre ASC";
 					// echo "<td><input type='checkbox'  onchange='selecionado($idusuario)' class='checkbox' id='".$idusuario."s' value='$idusuario'></td>";
 					$tabla.="<tr class='text' bgcolor='$color' onmouseover='this.style.backgroundColor=\"#C8C6F9\"' onmouseout='this.style.backgroundColor=\"$color\"'>";
 					$tabla.="<td>".$idusuario."</td>";
-					$tabla.="<td>".$rw1[1]." ".$rw1[2]."<input type='checkbox'  onchange='selecionado($idusuario)' class='checkbox' id='".$idusuario."s' value='$idusuario'></td>";
+					$tabla.="<td>".$rw1[1]." ".$rw1[2]."</td>";
+					// <input type='checkbox'  onchange='selecionado($idusuario)' class='checkbox' id='".$idusuario."s' value='$idusuario'>
 					$tabla.="<td>".$rw1[4]."</td>";
 					$tabla.="<td>".$rw1[5]."</td>";
 
