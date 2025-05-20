@@ -89,10 +89,7 @@ $pdf->SetFont('Times','',12);
 $pdf->Ln(20);
 $pdf->SetY($pdf->GetY() -10); // Mueve hacia abajo
 $pdf->SetDrawColor(0, 0, 0); // Establecer color de borde en blanco
-// Dibuja el primer rectángulo
-$pdf->SetLineWidth(0.5); // Establece el ancho de línea
-$pdf->SetDrawColor(0, 0, 0); // Establece el color del borde (negro en este caso)
-$pdf->Rect(10, 72, 95, 15); // Dibuja un rectángulo con relleno
+
 
 
 $pdf->SetY($pdf->GetY() +5); // Mueve hacia abajo
