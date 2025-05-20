@@ -177,8 +177,8 @@ $pdf->SetY($pdf->GetY() +5); // Mueve hacia abajo
 
 // Lista 1
 
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(190, 10, 'DATOS DEL SOLICITANTE', 1);
+$pdf->SetFont('Arial', 'B', 10); // Fuente en negrilla
+$pdf->Cell(190, 10, 'DATOS DEL SOLICITANTE', 1, 0, 'C'); // Texto centrado
 $pdf->Ln(); // Salto de línea
 
 // Lista 2
@@ -226,8 +226,8 @@ $pdf->Cell(95, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 8
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(190, 10, 'INFORMACION DEL SOLICITANTE', 1);
+$pdf->SetFont('Arial', 'B', 10); // Restaurar fuente normal
+$pdf->Cell(190, 10, 'INFORMACION DEL SOLICITANTE', 1, 0, 'C');
 $pdf->Ln(); // Salto de línea
 
 // Lista 9
@@ -250,16 +250,16 @@ $pdf->Cell(63.33, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 10
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(190, 10, 'AL FIRMAR EL PRESENTE FORMATO EL SOLICITANTE AUTORIZA, EXPRESA E IRREVOCABLEMENTE A ', 1);
-$pdf->Cell(190, 10, 'DESCONTAR DE MI SALARIO, BONIFICACIONES, PRESTACIONES SOCIALES, VACACIONES Y/O ', 1);
-$pdf->Cell(190, 10, 'INDEMNIZACION, EL SALDO QUE ADEUDE EN CASO DE TERMINACION DEL CONTRATO O RETIRO  ', 1);
-$pdf->Cell(190, 10, 'VOLUNTARIO ', 1);
+$pdf->SetFont('Arial', 'B', 10); // Restaurar fuente normal
+$pdf->Cell(190, 10, 'AL FIRMAR EL PRESENTE FORMATO EL SOLICITANTE AUTORIZA, EXPRESA E IRREVOCABLEMENTE A ', 1, 0 , 'C');
+$pdf->Cell(190, 10, 'DESCONTAR DE MI SALARIO, BONIFICACIONES, PRESTACIONES SOCIALES, VACACIONES Y/O ', 1, 0 , 'C');
+$pdf->Cell(190, 10, 'INDEMNIZACION, EL SALDO QUE ADEUDE EN CASO DE TERMINACION DEL CONTRATO O RETIRO  ', 1, 0 , 'C');
+$pdf->Cell(190, 10, 'VOLUNTARIO ', 1, 0 , 'C');
 $pdf->Ln(); // Salto de línea
 
 // Lista 11
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(190, 10, 'AUTORIZACIONES', 1);
+$pdf->SetFont('Arial', 'B', 10); // Restaurar fuente normal
+$pdf->Cell(190, 10, 'AUTORIZACIONES', 1, 0 , 'C');
 $pdf->Ln(); // Salto de línea
 
 // LISTA 12 
