@@ -52,7 +52,7 @@ function Header()
         // $this->Image('images/logoDesprendible.jpg', $posX, $this->GetY(), 20); // Cambia 'ruta/a/tu/imagen.png' a la ruta de tu imagen y ajusta el tamaño si es necesario
 
 
-       $imageWidth = 35; // Ancho de la imagen
+       $imageWidth = 20; // Ancho de la imagen
         $posX = $this->GetPageWidth() - $imageWidth - 15; // Posición X (15 es margen derecho)
         $posY = 12; // Posición Y (ajústalo si deseas más arriba o más abajo)
         $this->Image('images/logoDesprendible.jpg', $posX, $posY, $imageWidth);
