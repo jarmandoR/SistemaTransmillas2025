@@ -183,18 +183,16 @@ $pdf->Ln(); // Salto de línea
 
 // Lista 2
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 5, 'APELLIDOS Y NOMBRE COMPLETO', 1);
+$pdf->Cell(95, 10, 'APELLIDOS Y NOMBRE COMPLETO', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 5, '', 1);
+$pdf->Cell(95, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 3
-$sueldo_formateado = number_format($sueldo, 0, ',', '.');
-$salud_formateado = number_format($salud, 0, ',', '.');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(60, 5, 'SUELDO', 1);
+$pdf->Cell(95, 10, 'DOCUMENTO DE IDENTIFICACIÓN', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(35, 5, ''.$sueldo_formateado.'', 1);
+$pdf->Cell(95, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 4
