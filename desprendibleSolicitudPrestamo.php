@@ -252,123 +252,60 @@ $pdf->Ln(); // Salto de línea
 // Lista 10
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(190, 10, 'AL FIRMAR EL PRESENTE FORMATO EL SOLICITANTE AUTORIZA, EXPRESA E IRREVOCABLEMENTE A ', 1);
+$pdf->Cell(190, 10, 'DESCONTAR DE MI SALARIO, BONIFICACIONES, PRESTACIONES SOCIALES, VACACIONES Y/O ', 1);
+$pdf->Cell(190, 10, 'INDEMNIZACION, EL SALDO QUE ADEUDE EN CASO DE TERMINACION DEL CONTRATO O RETIRO  ', 1);
+$pdf->Cell(190, 10, 'VOLUNTARIO ', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 11
-$totaldeveng_formateado = number_format($totaldeveng, 0, ',', '.');
-$totaldeduccion_formateado = number_format($totaldeduccion, 0, ',', '.');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(60, 10, 'TOTAL DEVENGADO', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(35, 10, ''.$totaldeveng_formateado.'', 1);
+$pdf->Cell(190, 10, 'AUTORIZACIONES', 1);
 $pdf->Ln(); // Salto de línea
 
-
-
-
-$valorTotal=($totaldeveng+$ajustessumB)-($totaldeduccion+$ajustesresB);
-$valorTotal_formateado = number_format($valorTotal, 0, ',', '.');
+// LISTA 12 
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(190, 10, 'TOTAL                                                                                                                    VALOR A PAGAR:  '.$valorTotal_formateado.'', 1);
-// $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-// $pdf->Cell(95, 10, ' VALOR A PAGAR ', 1);
-
-
-$locale = 'es_CO'; // Define el locale para el idioma y formato de moneda colombiano
-$fmt = new NumberFormatter($locale, NumberFormatter::SPELLOUT); // Crea una instancia de NumberFormatter
-
-$valorEnLetras = $fmt->formatCurrency($valorTotal, 'COP');
-
-
-// Elimina la palabra "coma" y lo que le sigue
-$valorEnLetras = preg_replace('/\bcoma\b.*$/i', '', $valorEnLetras);
-
-$valorEnLetras_en_mayusculas = strtoupper($valorEnLetras);
-
-
-
+$pdf->Cell(95, 10, 'FIRMA DEL SOLICITANTE', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, 'FIRMA DE AUTORIZACIONES', 1);
 $pdf->Ln(); // Salto de línea
 
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(190, 10, 'VALOR EN LETRAS:  '.$valorEnLetras_en_mayusculas.' PESOS', 1);
-$pdf->Ln(); // Salto de línea
-$pdf->SetTextColor(255, 0, 0); // Establece el color de texto a rojo
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-
-$pdf->MultiCell(190, 5, 'SE DESCONTO '.$prestamos_formateado.' POR:  ' .$descriprestamos.'', 1);
-
-
-
-
-
-
-
-
-$pdf->Ln(); // Salto de línea
-$pdf->SetTextColor(0, 0, 0);
-
-$pdf->SetY($pdf->GetY() +5);
-$pdf->SetDrawColor(255, 255, 255); // Establecer color de borde en blanco
+// LISTA 13
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(95, 10, '', 1);
-$pdf->SetDrawColor(0,0,0); // Establecer color de borde en blanco
-$pdf->SetFont('Arial', '', 7); // Restaurar fuente normal
-if ($validado!="") {
-    $ruta_imagen="imgHojasDeVida/".$firma."";
-    if (file_exists($ruta_imagen)) {
-        // Mostrar la imagen si existe
-        $pdf->Image('imgHojasDeVida/'.$firma.'', $pdf->GetX() +5, $pdf->GetY() + 20, 40, 14);
-
-    } else {
-        // Mostrar un mensaje si la imagen no existe
-        $pdf->Cell(0, 5, 'si no se ve la firma revisar foto y volver a cargar ', 0, 1);
-    }
-
-
-
-    }
-$pdf->MultiCell(95, 25, 'RECIBI A SATISFACCION Y ACEPTO EN TODAS SUS PARTES ESTE PAGO     '.$validado.'', 1);
-
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 
+// LISTA 14
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, 'DIA', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, 'MES', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, 'AÑO', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, 'DIA', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, 'MES', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, 'AÑO', 1);
+$pdf->Ln(); // Salto de línea
 
 
-//           // Definir borde negro alrededor del encabezado
-//           $pdf->SetLineWidth(0.5); // Establece el ancho de línea
-//           $pdf->SetDrawColor(0, 0, 0); // Establece el color del borde (negro)
-//           $pdf->Rect(10, 10, 190, 180, 'D'); // Dibuja un rectángulo con borde
+// LISTA 15
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, '', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, '', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, '', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, '', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, '', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, '', 1);
+$pdf->Ln(); // Salto de línea
 
-
-
-// // Dibuja el segundo rectángulo
-// $pdf->Ln(20);
-// $pdf->SetY($pdf->GetY() -50); // Mueve hacia abajo
-// $pdf->SetLineWidth(0.5); // Establece el ancho de línea
-// $pdf->SetDrawColor(0, 0, 0); // Establece el color del borde (negro en este caso)
-// $pdf->Rect(105, 195, 95,35); // Dibuja un rectángulo sin relleno
-
-
-
-// Elimina la palabra "coma" y lo que le sigue
-
-
-$pdf->Ln(10);
-
-$formatofin=$formato;
-
-// if ($formatofin==1){
-// 	    $pdf->MultiCell(0, 6, utf8_decode('Que '.$nombre.', identificada con la cédula de ciudadanía N.º '.$cedula.' de Bogotá, laboró en nuestra empresa desde el '.date("d",$fechadelregi).' de '.date("m",$fechadelregi).' del '.date("Y",$fechadelregi).' con un CONTRATO A TERMINO INDEFINIDO, desempeñando el cargo de '.$cargo.'.'), 0,'J');
-// }else if($formatofin==2){
-
-
-
-
-
-
-$pdf->Ln(10);
-// $pdf->MultiCell(0, 6, 'Puede certificarla veracidad de este certificado en los correos: castiblanco@bermudas.com.co y/o recursosh@bermudas.com.co 
-// ', 0,'C');
-
-$pdf->Output();
 ?>
