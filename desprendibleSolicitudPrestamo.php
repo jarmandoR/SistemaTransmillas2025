@@ -233,20 +233,20 @@ $pdf->Ln(); // Salto de línea
 // Lista 9
 
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, 'VALOR CUOTAS QUINCENALES', 1);
+$pdf->Cell(63.33, 10, 'VALOR CUOTAS QUINCENALES', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, 'NUMERO DE CUOTAS', 1);
+$pdf->Cell(63.33, 10, 'NUMERO DE CUOTAS', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, 'DESCUENTO. PRIMA-PRESTACIONES', 1);
+$pdf->Cell(63.33, 10, 'DESCUENTO. PRIMA-PRESTACIONES', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 9
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, '$', 1);
+$pdf->Cell(63.33, 10, '$', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, '', 1);
+$pdf->Cell(63.33, 10, '', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, '', 1);
+$pdf->Cell(63.33, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 10
