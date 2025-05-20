@@ -190,42 +190,41 @@ $pdf->Ln(); // Salto de línea
 
 // Lista 3
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, 'DOCUMENTO DE IDENTIFICACIÓN', 1);
+$pdf->Cell(95, 10, 'DOCUMENTO DE IDENTIFICACION', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(95, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 4
-$auxilitrans_formateado = number_format($auxilitrans, 0, ',', '.');
-$pension_formateado = number_format($pension, 0, ',', '.');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(60, 5, 'AUXILIO DE TRANSPORTE', 1);
+$pdf->Cell(95, 10, 'CARGO', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(35, 5, ''.$auxilitrans_formateado.'', 1);
+$pdf->Cell(95, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 5
 
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(60, 5, 'HORAS EXTRA', 1);
+$pdf->Cell(95, 10, 'VALOR A DESCONTAR', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(35, 5, '', 1);
+$pdf->Cell(95, 10, '$', 1);
 $pdf->Ln(); // Salto de línea
+
 // Lista 6
 
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(60, 5, 'DIAS DE INCAPACIDAD', 1);
+$pdf->Cell(95, 10, 'SALDO PENDIENTE', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(35, 5, ''.$diasIncapacidad.'', 1);
+$pdf->Cell(95, 10, '', 1);
 $pdf->Ln(); // Salto de línea
+
 // Lista 7
-$pagdiasinca_formateado = number_format($pagdiasinca, 0, ',', '.');
-// $pension_formateado = number_format($pension, 0, ',', '.');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(60, 5, 'PAGO DE DIAS DE INCAPACIDAD', 1);
+$pdf->Cell(95, 10, 'MOTIVO DEL DESCUENTO O PRESTAMO', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(35, 5, ''.$pagdiasinca_formateado.'', 1);
+$pdf->Cell(95, 10, '', 1);
 $pdf->Ln(); // Salto de línea
+
 // Lista 8
 $prestamos_formateado = number_format($prestamos, 0, ',', '.');
 // $pension_formateado = number_format($pension, 0, ',', '.');
