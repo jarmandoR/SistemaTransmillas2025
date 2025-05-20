@@ -236,8 +236,8 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(63.33, 10, 'VALOR CUOTAS QUINCENALES', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(63.33, 10, 'NUMERO DE CUOTAS', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(63.33, 10, 'DESCUENTO. PRIMA-PRESTACIONES', 1);
+$pdf->SetFont('Arial', '', 9); // Restaurar fuente normal
+$pdf->Cell(63.33, 10, 'DESCUENTO PRIMA-PRESTACIONES', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 9
@@ -250,12 +250,8 @@ $pdf->Cell(63.33, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 10
-$totaldeveng_formateado = number_format($totaldeveng, 0, ',', '.');
-$totaldeduccion_formateado = number_format($totaldeduccion, 0, ',', '.');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(60, 5, 'AJUSTES', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(35, 5, ''.$ajustessumB.'', 1);
+$pdf->Cell(190, 10, 'AL FIRMAR EL PRESENTE FORMATO EL SOLICITANTE AUTORIZA, EXPRESA E IRREVOCABLEMENTE A ', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 11
