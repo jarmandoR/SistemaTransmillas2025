@@ -233,11 +233,11 @@ $pdf->Ln(); // Salto de línea
 // Lista 9
 
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(63.33, 10, 'VALOR CUOTAS QUINCENALES', 1);
+$pdf->Cell(63.33, 10, 'VALOR CUOTAS QUINCENALES', 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(63.33, 10, 'NUMERO DE CUOTAS', 1);
+$pdf->Cell(63.33, 10, 'NUMERO DE CUOTAS', 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 9); // Restaurar fuente normal
-$pdf->Cell(63.33, 10, 'DESCUENTO PRIMA-PRESTACIONES', 1);
+$pdf->Cell(63.33, 10, 'DESCUENTO PRIMA-PRESTACIONES', 1, 0 , 'C');
 $pdf->Ln(); // Salto de línea
 
 // Lista 9
@@ -257,7 +257,7 @@ DESCONTAR DE MI SALARIO, BONIFICACIONES, PRESTACIONES SOCIALES, VACACIONES Y/O
 INDEMNIZACIÓN, EL SALDO QUE ADEUDE EN CASO DE TERMINACIÓN DEL CONTRATO O RETIRO 
 VOLUNTARIO";
 
-$pdf->MultiCell(190, 10, $texto, 1); 
+$pdf->MultiCell(190, 10, $texto, 1, 0 , 'C'); 
 
 // Lista 11
 $pdf->SetFont('Arial', 'B', 10); // Restaurar fuente normal
@@ -281,17 +281,17 @@ $pdf->Ln(); // Salto de línea
 
 // LISTA 14
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(31.66, 10, 'DIA', 1);
+$pdf->Cell(31.66, 10, 'DIA', 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(31.66, 10, 'MES', 1);
+$pdf->Cell(31.66, 10, 'MES', 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(31.66, 10, 'AÑO', 1);
+$pdf->Cell(31.66, 10, 'AÑO', 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(31.66, 10, 'DIA', 1);
+$pdf->Cell(31.66, 10, 'DIA', 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(31.66, 10, 'MES', 1);
+$pdf->Cell(31.66, 10, 'MES', 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(31.66, 10, 'AÑO', 1);
+$pdf->Cell(31.66, 10, 'AÑO', 1, 0 , 'C');
 $pdf->Ln(); // Salto de línea
 
 
