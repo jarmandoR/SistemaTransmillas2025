@@ -308,4 +308,6 @@ $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(95, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
+
+$pdf->Output();
 ?>
