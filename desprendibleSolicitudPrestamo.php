@@ -33,7 +33,7 @@ function Header()
           // Definir borde negro alrededor del encabezado
           $this->SetLineWidth(0.5); // Establece el ancho de línea
           $this->SetDrawColor(0, 0, 0); // Establece el color del borde (negro)
-          $this->Rect(10, 10, 190, 40, 'D'); // Dibuja un rectángulo con borde
+          $this->Rect(10, 10, 190, 30, 'D'); // Dibuja un rectángulo con borde
 
     $this->SetFont('Times','B',15);
    
@@ -62,27 +62,8 @@ function Header()
         // Agrega la imagen al lado derecho del encabezado
         $this->Image('images/logoDesprendible.jpg', $posX, $posY, $imageWidth); // Cambia 'ruta/a/tu/imagen.png' a la ruta de tu imagen y ajusta el tamaño si es necesario
         // Agrega la imagen al lado derecho del encabezado
-        // $this->Image('images/logoDesprendible.jpg', $posX, $this->GetY(), $imageWidth); // Cambia 'ruta/a/tu/imagen.png' a la ruta de tu imagen y ajusta el tamaño si es necesario
-        
-        // $this->SetFont('Arial', '', 12);
-
-        // $this->SetY($this->GetY() +1); // Mueve hacia abajo
-        // $this->Cell(143, 10,'CEDULA '.$cedula.'                                        No.BOG 50', 0, 1, 'C');
-        // $this->SetY($this->GetY() -2); // Mueve hacia abajo
-        // $this->Cell(90, 10, 'NOMBRE '.$nombre.'                                        ', 0, 1, 'C');
-        // $this->SetY($this->GetY() -2); // Mueve hacia abajo
-        // $this->Cell(84, 10, 'Cargo '.$cargo.'                                          ', 0, 1, 'C');
-        // $this->SetY($this->GetY() -2); // Mueve hacia abajo
-        // $this->Cell(98, 10, 'Periodo del:'.$fechaini.'  Al:  '.$fechafin.'             ', 0, 1, 'C');
-        // $this->SetY($this->GetY() -2); // Mueve hacia abajo
-        // $this->Cell(173, 10, 'No DAVIVIENDA '.$cedula.'                                                               BOGOTA', 0, 1, 'C');
 
 }
-
-
-
-
-
 
 // Pie de página
 function Footer()
@@ -96,8 +77,6 @@ function Footer()
     // $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
 }
 }
-
-
 
 
 // Creación del objeto de la clase heredada
@@ -114,9 +93,6 @@ $pdf->SetDrawColor(0, 0, 0); // Establecer color de borde en blanco
 $pdf->SetLineWidth(0.5); // Establece el ancho de línea
 $pdf->SetDrawColor(0, 0, 0); // Establece el color del borde (negro en este caso)
 $pdf->Rect(10, 72, 95, 15); // Dibuja un rectángulo con relleno
-
-
-
 
 
 $pdf->SetY($pdf->GetY() +5); // Mueve hacia abajo
