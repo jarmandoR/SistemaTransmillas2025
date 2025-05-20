@@ -252,8 +252,11 @@ $pdf->Ln(); // Salto de línea
 // Lista 10
 $pdf->SetFont('Arial', 'B', 10); // Restaurar fuente normal
 $pdf->Cell(190, 10, 'AL FIRMAR EL PRESENTE FORMATO EL SOLICITANTE AUTORIZA, EXPRESA E IRREVOCABLEMENTE A ', 1);
+$pdf->Ln(); // Salto de línea
 $pdf->Cell(190, 10, 'DESCONTAR DE MI SALARIO, BONIFICACIONES, PRESTACIONES SOCIALES, VACACIONES Y/O ', 1);
+$pdf->Ln(); // Salto de línea
 $pdf->Cell(190, 10, 'INDEMNIZACION, EL SALDO QUE ADEUDE EN CASO DE TERMINACION DEL CONTRATO O RETIRO  ', 1);
+$pdf->Ln(); // Salto de línea
 $pdf->Cell(190, 10, 'VOLUNTARIO ', 1);
 $pdf->Ln(); // Salto de línea
 
