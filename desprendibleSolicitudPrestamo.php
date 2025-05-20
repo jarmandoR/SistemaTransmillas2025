@@ -37,7 +37,7 @@ function Header()
 
     $this->SetFont('Times','B',15);
    
-    $this->Cell(80);
+    $this->Cell(120);
    
     $this->Ln(20);
 
@@ -54,7 +54,7 @@ function Header()
 
        $imageWidth = 25; // Ancho de la imagen
         $posX = $this->GetPageWidth() - $imageWidth - 15; // Posición X (15 es margen derecho)
-        $posY = 18; // Posición Y (ajústalo si deseas más arriba o más abajo)
+        $posY = 16; // Posición Y (ajústalo si deseas más arriba o más abajo)
         $this->Image('images/logoDesprendible.jpg', $posX, $posY, $imageWidth);
 
 }
