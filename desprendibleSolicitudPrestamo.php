@@ -12,55 +12,8 @@
 // $asc="ASC";
 
 
-$diastrabajados=$_GET["diastrabajados"];
-$sueldo=$_GET["sueldo"];
-$auxilitrans=$_GET["auxilitrans"];
-$pagdiasinca=$_GET["pagdiasinca"];
-$totaldeveng=$_GET["totaldeveng"];
-$salud=$_GET["salud"];
-$pension=$_GET["pension"];
-$prestamos=$_GET["prestamos"];
-$totaldeduccion=$_GET["totaldeduccion"];
-
-$valor=$_GET["valor"];
-$deudas=$_GET["deudas"];
-$validado=$_GET["confirmado"];
-$diasIncapacidad=$_GET["diasIncapacidad"];
-$valordiasVacaciones=$_GET["vacaciones"];
-$diasVacaciones=$_GET["diasvacaciones"];
-$firma=$_GET["firma"];
-
-$descriprestamos=$_GET["descriprestamos"];
-$valorAjusteB=$_GET["valorAjuste"];
-$tipoAjusteB=$_GET["tipoAjuste"];
-$descripcionAjusteB=$_GET["descripcionAjuste"];
-
-$ajustessumB=0;
-$ajustesresB=0;
-if ($tipoAjusteB=="suma") {
-    $ajustessumB=$valorAjusteB;
-    $ajustesresB=0;
-}else if($tipoAjusteB=="descuento"){
-    $ajustessumB=0;
-    $ajustesresB=$valorAjusteB;
-}
-
 // desprendibleBasico.php?cedula=".$rw1[5]."&nombre=".$rw1[1].$rw1[2]."&cargo=$rw1[3]&fechaini=$fechaactual&fechafin=$fechafinal&cuenta=&diastrabajados=$diassitrabajo&sueldo=$valordediastrabajados&auxilitrans=$totalauxilio&pagdiasinca=$valorDiasIncapadidad&totaldeveng=$totaldevengado&salud=$valorSalud&pension=$valorPension&prestamos=$restaABasico&totaldeduccion=$totaldeduccion"
 
-$fechaini = strtotime($fechaini);
-$fechafin = strtotime($fechafin);
-
-$fechainidia=date("d",$fechaini);
-$fechainimes=date("m",$fechaini);
-$fechainiaño=date("Y",$fechaini);      
-
-
-$fechafindia=date("d",$fechafin);
-$fechafinmes=date("m",$fechafin);
-$fechafinaño=date("Y",$fechafin);   
-//             $fechadelregidia = date("d",$fechadelregi);
-
-// // error_reporting(0);
 require('fpdf/fpdf.php');
 
 
@@ -77,16 +30,10 @@ function addBackground($file, $x = 0, $y = 0, $w = null, $h = null) {
 function Header()
 {
 
-$sede=$_GET["sede"];
-$cedula=$_GET["cedula"];
-$nombre=$_GET["nombre"];
-$cargo=$_GET["cargo"];
-$fechaini=$_GET["fechaini"];
-$fechafin=$_GET["fechafin"];
           // Definir borde negro alrededor del encabezado
           $this->SetLineWidth(0.5); // Establece el ancho de línea
           $this->SetDrawColor(0, 0, 0); // Establece el color del borde (negro)
-          $this->Rect(10, 10, 190, 60, 'D'); // Dibuja un rectángulo con borde
+          $this->Rect(10, 10, 190, 40, 'D'); // Dibuja un rectángulo con borde
 
     $this->SetFont('Times','B',15);
    
