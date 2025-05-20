@@ -52,7 +52,7 @@ function Header()
         // $this->Image('images/logoDesprendible.jpg', $posX, $this->GetY(), 20); // Cambia 'ruta/a/tu/imagen.png' a la ruta de tu imagen y ajusta el tamaño si es necesario
 
 
-       $imageWidth = 20; // Ancho de la imagen
+       $imageWidth = 25; // Ancho de la imagen
         $posX = $this->GetPageWidth() - $imageWidth - 15; // Posición X (15 es margen derecho)
         $posY = 12; // Posición Y (ajústalo si deseas más arriba o más abajo)
         $this->Image('images/logoDesprendible.jpg', $posX, $posY, $imageWidth);
@@ -199,13 +199,13 @@ $pdf->Cell(31.66, 10, 'Dia', 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(31.66, 10, 'Mes', 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(31.66, 10, 'Año', 1, 0 , 'C');
+$pdf->Cell(31.66, 10, utf8_decode('Año'), 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(31.66, 10, 'Dia', 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
 $pdf->Cell(31.66, 10, 'Mes', 1, 0 , 'C');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(31.66, 10, 'Año', 1, 0 , 'C');
+$pdf->Cell(31.66, 10, utf8_decode('Año'), 1, 0 , 'C');
 $pdf->Ln(); // Salto de línea
 
 
