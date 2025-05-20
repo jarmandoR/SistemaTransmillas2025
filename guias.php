@@ -245,7 +245,7 @@ if($param32!="" and $param33!=""){
   }else { $conde3="  "; } 
 
 echo "<tr><td><button type='button' class='btn btn-primary btn-lg' onclick='buscarsede();'>Buscar</button></td><td></td>";
-echo "<td><button type='submit' class='btn btn-danger btn-lg' >Enviar</button><div id='loader' style='display: none; text-align: center; margin: 20px 0;'>
+echo "<td><button type='submit' class='btn btn-danger btn-lg' >Enviar</button>K<div id='loader' style='display: none; text-align: center; margin: 20px 0;'>
   <img src='https://i.gifer.com/ZZ5H.gif' alt='Cargando...' width='80'></div></td><td style='text-align: right;'><button type='button'  onclick='enviarids(\"$id_p\",\"Whatsapp operador\")' >Mensaje a clientes</button></td><tr>";
 
 
