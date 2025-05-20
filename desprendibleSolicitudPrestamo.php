@@ -279,33 +279,33 @@ $pdf->Ln(); // Salto de línea
 
 // LISTA 14
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, 'DIA', 1);
+$pdf->Cell(31.66, 10, 'DIA', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, 'MES', 1);
+$pdf->Cell(31.66, 10, 'MES', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, 'AÑO', 1);
+$pdf->Cell(31.66, 10, 'AÑO', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, 'DIA', 1);
+$pdf->Cell(31.66, 10, 'DIA', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, 'MES', 1);
+$pdf->Cell(31.66, 10, 'MES', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, 'AÑO', 1);
+$pdf->Cell(31.66, 10, 'AÑO', 1);
 $pdf->Ln(); // Salto de línea
 
 
 // LISTA 15
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, '', 1);
+$pdf->Cell(31.66, 10, '', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, '', 1);
+$pdf->Cell(31.66, 10, '', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, '', 1);
+$pdf->Cell(31.66, 10, '', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, '', 1);
+$pdf->Cell(31.66, 10, '', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, '', 1);
+$pdf->Cell(31.66, 10, '', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(95, 10, '', 1);
+$pdf->Cell(31.66, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 
