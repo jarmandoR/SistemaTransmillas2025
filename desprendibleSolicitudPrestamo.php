@@ -226,31 +226,27 @@ $pdf->Cell(95, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 8
-$prestamos_formateado = number_format($prestamos, 0, ',', '.');
-// $pension_formateado = number_format($pension, 0, ',', '.');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(60, 5, 'OTROS NO CONSTITUYE SALARIO', 1);
-$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(35, 5, '', 1);
+$pdf->Cell(190, 10, 'INFORMACION DEL SOLICITANTE', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 9
 
-// $pension_formateado = number_format($pension, 0, ',', '.');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(60, 5, 'DIAS VACACIONES', 1);
+$pdf->Cell(95, 10, 'VALOR CUOTAS QUINCENALES', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(35, 5, ''.$diasVacaciones.'', 1);
+$pdf->Cell(95, 10, 'NUMERO DE CUOTAS', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, 'DESCUENTO. PRIMA-PRESTACIONES', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 9
-$valordiasVacaciones_formateado = number_format($valordiasVacaciones, 0, ',', '.');
-// $pension_formateado = number_format($pension, 0, ',', '.');
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(60, 5, 'PAGO DIAS VACACIONES', 1);
+$pdf->Cell(95, 10, '$', 1);
 $pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
-$pdf->Cell(35, 5, ''.$valordiasVacaciones_formateado.'', 1);
-$pdf->SetFont('Arial', '', 10); 
+$pdf->Cell(95, 10, '', 1);
+$pdf->SetFont('Arial', '', 10); // Restaurar fuente normal
+$pdf->Cell(95, 10, '', 1);
 $pdf->Ln(); // Salto de línea
 
 // Lista 10
