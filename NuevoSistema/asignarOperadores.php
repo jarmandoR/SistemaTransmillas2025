@@ -67,6 +67,6 @@ for ($b = 1; $b <= $registros; $b++) {
 
 // Opcional: devolver respuesta o redirigir
 echo json_encode([
-    'success' => true,
-    'procesados' => $idsProcesados,
+    'status' => 'success',
+    'ids' => $idsProcesados,
 ]);
