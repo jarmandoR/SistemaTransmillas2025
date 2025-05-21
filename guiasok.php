@@ -71,9 +71,9 @@ if($tipoguia=='sedes'){
 } else if($tipoguia=='operador'){
 	
 	$idsProcesados = []; // Aquí guardaremos los IDs que vamos a devolver
-	$sql6="SELECT usu_celular FROM usuarios where `idusuarios`='$param31' ";	
-	$DB1->Execute($sql6);
-	$rw3=mysqli_fetch_row($DB1->Consulta_ID);
+	echo$sql6="SELECT usu_celular FROM usuarios where `idusuarios`='$param31' ";	
+	// $DB1->Execute($sql6);
+	// $rw3=mysqli_fetch_row($DB1->Consulta_ID);
 	$telefono=$rw3[0];
 	$tipo="20";
 
@@ -90,18 +90,18 @@ if($tipoguia=='sedes'){
 			$direccion="Entrega ".$_REQUEST["direccion_$b"];
 			$planilla=$_REQUEST["guia_$b"];
 			
-			$sql1="UPDATE `cuentaspromotor` SET `cue_idoperentrega`='$param31', `cue_fecha`='$fechatiempo', cue_estado='9'  where cue_idservicio=$idser";
-			$DB1->Execute($sql1);	
+			echo$sql1="UPDATE `cuentaspromotor` SET `cue_idoperentrega`='$param31', `cue_fecha`='$fechatiempo', cue_estado='9'  where cue_idservicio=$idser";
+			// $DB1->Execute($sql1);	
 			
-		   $sql2="UPDATE `servicios` SET  ser_idusuarioguia='$param31',`ser_idusuarioregistro`='$id_usuario',`ser_fechaguia`='$fechatiempo',ser_estado='9',ser_visto=0
+		   echo$sql2="UPDATE `servicios` SET  ser_idusuarioguia='$param31',`ser_idusuarioregistro`='$id_usuario',`ser_fechaguia`='$fechatiempo',ser_estado='9',ser_visto=0
 			WHERE `idservicios`='$idser' ";
-			$DB->Execute($sql2);
+			// $DB->Execute($sql2);
 			
-			 $sql3="UPDATE `guias` SET `gui_encomienda`='$id_nombre',`gui_fechaencomienda`='$fechatiempo' WHERE `gui_idservicio`='$idser'";
-			$DB->Execute($sql3); 
+			 echo$sql3="UPDATE `guias` SET `gui_encomienda`='$id_nombre',`gui_fechaencomienda`='$fechatiempo' WHERE `gui_idservicio`='$idser'";
+			// $DB->Execute($sql3); 
 
-			 $sqlse = "INSERT INTO `seguimientoruta`( `seg_fecha`, `seg_idservicio`, `seg_direccion`, `seg_tipo`, `seg_estado`,`seg_idusuario`,`seg_guia`) values ('$fechatiempo','$idser','$direccion','Entrega','Asignada','$param31','$planilla')";
-			$DB1->Execute($sqlse);	
+			 echo$sqlse = "INSERT INTO `seguimientoruta`( `seg_fecha`, `seg_idservicio`, `seg_direccion`, `seg_tipo`, `seg_estado`,`seg_idusuario`,`seg_guia`) values ('$fechatiempo','$idser','$direccion','Entrega','Asignada','$param31','$planilla')";
+			// $DB1->Execute($sqlse);	
 			
 
 			// enviarAlertaWhat("","3125215864",$tipo,$idser);
@@ -121,7 +121,44 @@ if($tipoguia=='sedes'){
 		 'ids' => $idsProcesados
 	 ]);
 	 exit;
-	// header ("Location: guias.php?bandera=1&param31=$param31");
+	header ("Location: guias.php?bandera=1&param31=$param31");
+
+	// $sql6="SELECT usu_celular FROM usuarios where `idusuarios`='$param31' ";	
+	// $DB1->Execute($sql6);
+	// $rw3=mysqli_fetch_row($DB1->Consulta_ID);
+	// $telefono=$rw3[0];
+	// $tipo="20";
+
+	// for($b=1;$b<=$registros;$b++)
+	// {
+	//  @$valor=$_REQUEST["asignar_$b"];
+	 
+	// 	if($valor==1){
+	// 		$idser=$_REQUEST["servicio_$b"];
+	// 		$direccion="Entrega ".$_REQUEST["direccion_$b"];
+	// 		$planilla=$_REQUEST["guia_$b"];
+			
+	// 		$sql1="UPDATE `cuentaspromotor` SET `cue_idoperentrega`='$param31', `cue_fecha`='$fechatiempo', cue_estado='9'  where cue_idservicio=$idser";
+	// 		$DB1->Execute($sql1);	
+			
+	// 	   $sql2="UPDATE `servicios` SET  ser_idusuarioguia='$param31',`ser_idusuarioregistro`='$id_usuario',`ser_fechaguia`='$fechatiempo',ser_estado='9',ser_visto=0
+	// 		WHERE `idservicios`='$idser' ";
+	// 		$DB->Execute($sql2);
+			
+	// 		 $sql3="UPDATE `guias` SET `gui_encomienda`='$id_nombre',`gui_fechaencomienda`='$fechatiempo' WHERE `gui_idservicio`='$idser'";
+	// 		$DB->Execute($sql3); 
+
+	// 		 $sqlse = "INSERT INTO `seguimientoruta`( `seg_fecha`, `seg_idservicio`, `seg_direccion`, `seg_tipo`, `seg_estado`,`seg_idusuario`,`seg_guia`) values ('$fechatiempo','$idser','$direccion','Entrega','Asignada','$param31','$planilla')";
+	// 		$DB1->Execute($sqlse);	
+			
+
+
+	// 		 enviarAlertaWhat("",$telefono,$tipo,$idser);
+	// 		enviarAlertaWhat("","3125215864",$tipo,$idser);
+
+	// 	}
+	
+	// }
 	
 }else if($tipoguia=='validar'){
 	
