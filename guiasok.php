@@ -77,8 +77,10 @@ if($tipoguia=='sedes'){
 	$telefono=$rw3[0];
 	$tipo="20";
 
+	$cont=0;
 	for($b=1;$b<=$registros;$b++)
 	{
+		$cont++;
 	 @$valor=$_REQUEST["asignar_$b"];
 	 
 		if($valor==1){
@@ -111,7 +113,7 @@ if($tipoguia=='sedes'){
 	$DB->cerrarconsulta();
 	$DB1->cerrarconsulta();
 
-	 enviarAlertaWhat("",$telefono,$tipo,$b);
+	 enviarAlertaWhat("",$telefono,$tipo,$cont);
 	
 	 header('Content-Type: application/json');
 	 echo json_encode([
