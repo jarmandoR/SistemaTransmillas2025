@@ -500,38 +500,38 @@ function enviarFormulario() {
 
     // Mostrar el loader
     $('#loader').show();
-	alert('se enviara');
-    // $.ajax({
-    //   url: $('#form1').attr('action'),
-    //   type: 'POST',
-    //   data: formData,
-    //   contentType: false,
-    //   processData: false,
-    //   success: function(response) {
-    //     console.log("Respuesta del servidor:", response);
-    //     alert('Se han asignado correctamente');
 
-    //     // Ocultar el loader
-    //     $('#loader').hide();
+    $.ajax({
+      url: $('#form1').attr('action'),
+      type: 'POST',
+      data: formData,
+      contentType: false,
+      processData: false,
+      success: function(response) {
+        console.log("Respuesta del servidor:", response);
+        alert('Se han asignado correctamente');
 
-    //     // Asegúrate que response sea un JSON. Si es texto, parsea:
-    //     try {
-    //       var res = typeof response === 'string' ? JSON.parse(response) : response;
+        // Ocultar el loader
+        $('#loader').hide();
+
+        // Asegúrate que response sea un JSON. Si es texto, parsea:
+        try {
+          var res = typeof response === 'string' ? JSON.parse(response) : response;
           
-    //       if (res.ids && Array.isArray(res.ids)) {
-    //         res.ids.forEach(function(id) {
-    //           $('#tr_' + id).hide(); // Oculta los <tr id="tr_5"> por ejemplo
-    //         });
-    //       }
-    //     } catch (e) {
-    //       console.error("Error al parsear respuesta:", e);
-    //     }
-    //   },
-    //   error: function(xhr, status, error) {
-    //     console.error("Error en la solicitud AJAX:", error);
-    //     $('#loader').hide();
-    //   }
-    // });
+          if (res.ids && Array.isArray(res.ids)) {
+            res.ids.forEach(function(id) {
+              $('#tr_' + id).hide(); // Oculta los <tr id="tr_5"> por ejemplo
+            });
+          }
+        } catch (e) {
+          console.error("Error al parsear respuesta:", e);
+        }
+      },
+      error: function(xhr, status, error) {
+        console.error("Error en la solicitud AJAX:", error);
+        $('#loader').hide();
+      }
+    });
   }
 
 </script>
