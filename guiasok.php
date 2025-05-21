@@ -82,8 +82,9 @@ if($tipoguia=='sedes'){
 	 @$valor=$_REQUEST["asignar_$b"];
 	 
 		if($valor==1){
-			$idsProcesados[] = $b;
+			
 			$idser=$_REQUEST["servicio_$b"];
+			$idsProcesados[] = $idser;
 			$direccion="Entrega ".$_REQUEST["direccion_$b"];
 			$planilla=$_REQUEST["guia_$b"];
 			
