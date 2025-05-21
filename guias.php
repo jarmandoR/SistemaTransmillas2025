@@ -245,7 +245,7 @@ if($param32!="" and $param33!=""){
   }else { $conde3="  "; } 
 
 echo "<tr><td><button type='button' class='btn btn-primary btn-lg' onclick='buscarsede();'>Buscar</button></td><td></td>";
-echo "<td><button type='submit' class='btn btn-danger btn-lg' >Enviar</button>K<div id='loader' style='display: none; text-align: center; margin: 20px 0;'>
+echo "<td><button type='button' class='btn btn-danger btn-lg' onclick='enviarFormulario()'>RR Enviar</button><div id='loader' style='display: none; text-align: center; margin: 20px 0;'>
   <img src='https://i.gifer.com/ZZ5H.gif' alt='Cargando...' width='80'></div></td><td style='text-align: right;'><button type='button'  onclick='enviarids(\"$id_p\",\"Whatsapp operador\")' >Mensaje a clientes</button></td><tr>";
 
 
@@ -494,40 +494,44 @@ include("footer.php");
     }
 }
 
-$(document).ready(function() {
-    $('#form1').on('submit', function(e) {
-      e.preventDefault(); // evita que se recargue la página
+function enviarFormulario() {
+    var form = $('#form1')[0]; // Formulario como objeto DOM
+    var formData = new FormData(form); // Captura todo (inputs, archivos)
 
-      var formData = new FormData(this); // captura todo el formulario, incluyendo archivos
-		// Mostrar loader
-		$('#loader').show();
-      $.ajax({
-        url: $(this).attr('action'), // "guiasok.php"
-        type: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false,
-        beforeSend: function() {
-          // Opcional: puedes desactivar el botón o mostrar un loader
-        },
-        success: function(response) {
-          	console.log("Respuesta del servidor:", response);
-		  	alert('Se han asignado correctamente');
-			// Ocultar loader
-			 $('#loader').hide();
-			if (response.ids && Array.isArray(response.ids)) {
-				response.ids.forEach(function(id) {
-				$('#tr_' + id).hide();
-				});
-			}
-			
-          // Aquí puedes mostrar un mensaje o actualizar una parte de la página
-        },
-        error: function(xhr, status, error) {
-          console.error("Error en la solicitud AJAX:", error);
-        }
-      });
-    });
-  });
+    // Mostrar el loader
+    $('#loader').show();
+	alert('se enviara');
+    // $.ajax({
+    //   url: $('#form1').attr('action'),
+    //   type: 'POST',
+    //   data: formData,
+    //   contentType: false,
+    //   processData: false,
+    //   success: function(response) {
+    //     console.log("Respuesta del servidor:", response);
+    //     alert('Se han asignado correctamente');
+
+    //     // Ocultar el loader
+    //     $('#loader').hide();
+
+    //     // Asegúrate que response sea un JSON. Si es texto, parsea:
+    //     try {
+    //       var res = typeof response === 'string' ? JSON.parse(response) : response;
+          
+    //       if (res.ids && Array.isArray(res.ids)) {
+    //         res.ids.forEach(function(id) {
+    //           $('#tr_' + id).hide(); // Oculta los <tr id="tr_5"> por ejemplo
+    //         });
+    //       }
+    //     } catch (e) {
+    //       console.error("Error al parsear respuesta:", e);
+    //     }
+    //   },
+    //   error: function(xhr, status, error) {
+    //     console.error("Error en la solicitud AJAX:", error);
+    //     $('#loader').hide();
+    //   }
+    // });
+  }
 
 </script>
