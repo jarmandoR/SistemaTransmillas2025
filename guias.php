@@ -246,7 +246,7 @@ if($param32!="" and $param33!=""){
 
 echo "<tr><td><button type='button' class='btn btn-primary btn-lg' onclick='buscarsede();'>Buscar</button></td><td></td>";
 echo "<td><button type='button' class='btn btn-danger btn-lg' onclick='enviarFormulario()'>RR Enviar</button><div id='loader' style='display: none; text-align: center; margin: 20px 0;'>
-  <img src='https://i.gifer.com/ZZ5H.gif' alt='Cargando...' width='80'></div></td><td style='text-align: right;'><button type='button'  onclick='enviarids(\"$id_p\",\"Whatsapp operador\")' >Mensaje a clientes</button></td><tr>";
+  <img src='https://i.gifer.com/ZZ5H.gif' alt='Cargando...' width='20px'></div></td><td style='text-align: right;'><button type='button'  onclick='enviarids(\"$id_p\",\"Whatsapp operador\")' >Mensaje a clientes</button></td><tr>";
 
 
 $FB->titulo_azul1("IDguia",1,0,7); 
