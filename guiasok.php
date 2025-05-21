@@ -113,7 +113,7 @@ if($tipoguia=='sedes'){
 	$DB->cerrarconsulta();
 	$DB1->cerrarconsulta();
 
-	 enviarAlertaWhat("",$telefono,$tipo,$cont);
+	//  enviarAlertaWhat("",$telefono,$tipo,$cont);
 	
 	 header('Content-Type: application/json');
 	 echo json_encode([
