@@ -215,7 +215,7 @@ alert('Seleccione el operario');
 <?php
 
 $FB->nuevo("", "$id_sedes", "asignar_planillas.php");
-$FB->abre_form("form1","guiasok.php","post");
+$FB->abre_form("form1","NuevoSistema/asignarOperadores.php","post");
 
 $conde="and usu_idsede=$id_sedes"; 
 $conde1=" and inner_sedes=$id_sedes"; 
