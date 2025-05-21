@@ -1,7 +1,6 @@
 
 <?php
 // procesar_asignacion.php
- // Asegúrate de que la ruta sea correcta
 require_once 'Database.php';
 $config = require 'config.php';
 
@@ -12,27 +11,27 @@ $db = new Database(
     $config['password']
 );
 
-// Variables necesarias que deberías recibir por POST o definir previamente
+// Variables necesarias
 $param31     = $_POST['param31'] ?? null;
 $registros   = $_POST['registros'] ?? 0;
-$fechatiempo = date('Y-m-d H:i:s'); // Puedes ajustar esto según tu formato
-// $id_usuario  = $_POST['id_usuario'] ?? null;
+$fechatiempo = date('Y-m-d H:i:s');
 $id_usuario  = "523";
-
-// $id_nombre   = $_POST['id_nombre'] ?? null;
 $id_nombre   = "Jose Armando Ramirez";
-
 
 $idsProcesados = [];
 
-// Obtener el número de teléfono
+// 🔍 Medir SELECT de teléfono
+$t0 = microtime(true);
 $sql6 = "SELECT usu_celular FROM usuarios WHERE idusuarios = ?";
 $stmt = $db->query($sql6, [$param31]);
 $row  = $stmt->fetch();
+$t1 = microtime(true);
+echo "⏱️ SELECT teléfono: " . round($t1 - $t0, 4) . " segundos<br>";
+
 $telefono = $row ? $row['usu_celular'] : null;
 $tipo = "20";
 
-// Procesar los registros asignados
+// 🔁 Procesar registros
 for ($b = 1; $b <= $registros; $b++) {
     $valor = $_POST["asignar_$b"] ?? 0;
 
@@ -40,32 +39,43 @@ for ($b = 1; $b <= $registros; $b++) {
         $idser     = $_POST["servicio_$b"];
         $direccion = "Entrega " . $_POST["direccion_$b"];
         $planilla  = $_POST["guia_$b"];
-
         $idsProcesados[] = $idser;
 
-        // Actualizar cuentaspromotor
+        // 🔍 UPDATE cuentaspromotor
+        $t2 = microtime(true);
         $sql1 = "UPDATE cuentaspromotor SET cue_idoperentrega = ?, cue_fecha = ?, cue_estado = '9' WHERE cue_idservicio = ?";
         $db->query($sql1, [$param31, $fechatiempo, $idser]);
+        $t3 = microtime(true);
+        echo "⏱️ UPDATE cuentaspromotor: " . round($t3 - $t2, 4) . " segundos<br>";
 
-        // Actualizar servicios
+        // 🔍 UPDATE servicios
+        $t4 = microtime(true);
         $sql2 = "UPDATE servicios SET ser_idusuarioguia = ?, ser_idusuarioregistro = ?, ser_fechaguia = ?, ser_estado = '9', ser_visto = 0 WHERE idservicios = ?";
         $db->query($sql2, [$param31, $id_usuario, $fechatiempo, $idser]);
+        $t5 = microtime(true);
+        echo "⏱️ UPDATE servicios: " . round($t5 - $t4, 4) . " segundos<br>";
 
-        // Actualizar guías
+        // 🔍 UPDATE guias
+        $t6 = microtime(true);
         $sql3 = "UPDATE guias SET gui_encomienda = ?, gui_fechaencomienda = ? WHERE gui_idservicio = ?";
         $db->query($sql3, [$id_nombre, $fechatiempo, $idser]);
+        $t7 = microtime(true);
+        echo "⏱️ UPDATE guias: " . round($t7 - $t6, 4) . " segundos<br>";
 
-        // Insertar seguimiento
+        // 🔍 INSERT seguimientoruta
+        $t8 = microtime(true);
         $sql4 = "INSERT INTO seguimientoruta (seg_fecha, seg_idservicio, seg_direccion, seg_tipo, seg_estado, seg_idusuario, seg_guia)
                  VALUES (?, ?, ?, 'Entrega', 'Asignada', ?, ?)";
         $db->query($sql4, [$fechatiempo, $idser, $direccion, $param31, $planilla]);
-
-        // Aquí podrías llamar a enviarAlertaWhat si lo necesitas
-        // enviarAlertaWhat("", "3125215864", $tipo, $idser);
+        $t9 = microtime(true);
+        echo "⏱️ INSERT seguimientoruta: " . round($t9 - $t8, 4) . " segundos<br>";
     }
 }
 
-// Opcional: devolver respuesta o redirigir
+// Total general
+$t_total = round(($t9 ?? microtime(true)) - $t0, 4);
+echo "<br>✅ Tiempo total del proceso: {$t_total} segundos<br>";
+
 echo json_encode([
     'status' => 'success',
     'ids' => $idsProcesados,
