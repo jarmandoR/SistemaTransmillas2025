@@ -150,11 +150,12 @@ if($param2!="" and $param1!=""){
 
    <div id="segundo" style="width: 45%; float:left;">';
    echo '<table class="table table-hover"><tr bgcolor="#868A08" class="tittle3"><td>Guias X Validar</td></tr><tr><td>';
-	   $FB->titulo_azul1("Fecha",1,0,7); 
-	   $FB->titulo_azul1("Guia",1,0,0); 
-	   $FB->titulo_azul1("Paquete",1,0,0); 
-	   $FB->titulo_azul1("Descripcion",1,0,0); 
-	  $FB->titulo_azul1("Piezas",1,0,0); 
+		$FB->titulo_azul1("Fecha",1,0,7); 
+		$FB->titulo_azul1("Guia",1,0,0); 
+		$FB->titulo_azul1("Paquete",1,0,0); 
+		$FB->titulo_azul1("Descripcion",1,0,0); 
+	  	$FB->titulo_azul1("Piezas",1,0,0); 
+	 	$FB->titulo_azul1("Llego",1,0,0); 
 
 	  $sql="SELECT `idservicios`, `ser_consecutivo`,`ser_tipopaquete`, ser_piezas,numeropieza,ser_fechaguia,ser_paquetedescripcion,cli_idciudad
 	  FROM serviciosdia inner join piezasguia on ser_consecutivo=numeroguia  where ser_estado in ('6','7') and guiallega=0  $conde1   $conde3 ORDER BY ser_fechaguia desc ";
@@ -175,6 +176,12 @@ if($param2!="" and $param1!=""){
 		 <td>".$rw1[6]."</td>
 		 <td>".$rw1[4]."</td>
 		 ";
+		 echo "<td><div id='campo$va'>";
+		echo "<select  style='width:120px;border:1px solid #f9f9f9;background-color:#074f91;color:#f9f9f9;font-size:15px'  name='$va' id='$va'   class='borrar' required>";
+		$LT->llenaselect_ar("Selecccione...",$estadosguia);
+		echo "</select></div><input name='servicio_$va' id='servicio_$va' type='hidden'  value='$rw1[0]'></td>";
+		echo "<input name='piezasg_$va' id='piezasg_$va' type='hidden'  value='$rw1[7]'>";
+		echo "<input name='guia_$va' id='guia_$va' type='hidden'  value='$rw1[1]'>";
 
 	 }
 
