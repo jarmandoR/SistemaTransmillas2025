@@ -1155,7 +1155,7 @@ $valorremesa=$_REQUEST["valorremesa"];
 $id_param=$_REQUEST["idservicio"];
 $teldestino=$_REQUEST["teldestino"];
 $telremitente=$_REQUEST["telremitente"];
-$telefonos=$teldestino.','.$telremitente;
+$telefonos="'".$teldestino."','".$telremitente."'";
 
 $sql33="SELECT tip_preciokilo,tip_precioadicional from tiposervicio WHERE `idtiposervicio`=$valortservicio"; 
 $DB->Execute($sql33);
@@ -1261,6 +1261,7 @@ if($valortservicio=='1000'){
 	   $FB->titulo_azul1("",8,0,5);  
 	  // $FB->llena_texto("Ingrese El Valor:",111, 118, $DB, "", "", "", 6, 0);
 	  //$FB->llena_texto("",111, 118, $DB, "", "", 0, 6, 0);
+	
 	  $FB->llena_texto("Cliente:",113,2, $DB, "(SELECT  idcreditos,`cre_nombre` FROM `creditos` inner join  rel_crecli on rel_idcredito=idcreditos inner join clientesdir on idclientesdir=rel_idcliente where cli_telefono in ($telefonos) group by idcreditos )", "buscarservicio(param4.value,param11.value,this.value,\"Editar\");", "", 1, 1);
 
 	   
