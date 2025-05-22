@@ -678,7 +678,7 @@ if($rw[31]==1){
 
 	
 }else if($rw[31]==2){
-
+	$telefonos="'".$rw[2]."','".$rw[8]."'";
 	$FB->titulo_azul1("",8,0,5);  
    $FB->llena_texto("Cliente:",113,2, $DB, "(SELECT  idcreditos,`cre_nombre` FROM `creditos` inner join  rel_crecli on rel_idcredito=idcreditos inner join clientesdir on idclientesdir=rel_idcliente where cli_telefono in ($telefonos) group by idcreditos )", "buscarservicio(param4.value,param11.value,this.value,\"Editar\");", "", 1, 1);
 
