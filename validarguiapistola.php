@@ -79,7 +79,21 @@ var ciudado= document.getElementById("param6").value;
 						$("#mensaje").modal("show"); 
 							var divvalor= document.getElementById("mensajevalor3");
 							divvalor.innerHTML="<strong>OK!</strong>  GUIA VALIDADA CON EXITO</a>";
+							guia= result.resultado;
 
+							idGuia =result.idGuia;
+							paquete =result.paquete;
+							piezas =result.piezas;
+							// Crear nueva fila
+							let nuevaFila = `
+								<tr>
+								<td>${idGuia}</td>
+								<td>${paquete}</td>
+								<td>${piezas}</td>
+								</tr>
+							`;
+						// Agregar al tbody
+						$("#tablaGuias tbody").append(nuevaFila);
 
 					}else if(guia==3) {
 					/* 	$("#enviarmensaje").modal("show"); 
@@ -214,11 +228,11 @@ if($param2!="" and $param1!=""){
 echo '</table></td></tr></table></div>
 
    <div id="tercero" style="width: 30%; float:left;">';
-   echo '<table class="table table-hover"><tr bgcolor="#04B404" class="tittle3"><td>Guias Validadas</td></tr><tr><td>';
+   echo '<table  id="tablaGuias"  class="table table-hover"> <tbody><tr bgcolor="#04B404" class="tittle3"><td>Guias Validadas</td></tr><tr><td>';
 	   $FB->titulo_azul1("Guia",1,0,7); 
 	   $FB->titulo_azul1("Paquete",1,0,0); 
 	  $FB->titulo_azul1("Piezas",1,0,0); 
-	  $FB->titulo_azul1("Imprimir",1,0,0); 
+	//   $FB->titulo_azul1("Imprimir",1,0,0); 
 
 
 	   $sql="SELECT `idservicios`, `ser_consecutivo`,`ser_tipopaquete`, ser_piezas,numeropieza
@@ -238,11 +252,11 @@ echo '</table></td></tr></table></div>
 			 <td>".$rw1[4]."</td>
 			 ";
 			 echo "<td align='center' >";
-			 echo "<a href='ticketfactura.php?id_param=$id_p&pagina2=validarguiapistola.php' target='_blank'><img src='img/imprimir.png'></a></td>";	
+			//  echo "<a href='ticketfactura.php?id_param=$id_p&pagina2=validarguiapistola.php' target='_blank'><img src='img/imprimir.png'></a></td>";	
 	 
 
 		 }
-   echo '</table></td></tr></table></div>
+   echo ' </tbody></table></td></tr></table></div>
 
    <div id="cuarto" style="width: 20%; float:left;">';
 
