@@ -5,6 +5,31 @@ include("layout.php");
 ?>
 <head>
 <script>
+
+$(function () {
+    $(document).on('change', '.borrar', function (event) {
+		
+		var valor = $(this).val();
+		var descripcion=document.getElementById("des_"+$(this).attr('name')).value;
+		var idservicio=document.getElementById("servicio_"+$(this).attr('name')).value;
+		var piezasg=document.getElementById("piezasg_"+$(this).attr('name')).value;
+		var guia=document.getElementById("guia_"+$(this).attr('name')).value;
+
+		event.preventDefault();
+		$(this).closest('tr').remove();
+      	datos = {"tipoguia":"validar","servicio":idservicio,"descripcion":descripcion,"llego":valor,"piezasg":piezasg,"guia":guia};
+		$.ajax({
+				url: "guiasok.php",
+				type: "POST",
+				data: datos
+			}).done(function(respuesta){
+				
+			});
+
+		
+    });
+});
+
 function buscarsede(dato)
 {
 
@@ -182,6 +207,7 @@ if($param2!="" and $param1!=""){
 		echo "</select></div><input name='servicio_$va' id='servicio_$va' type='hidden'  value='$rw1[0]'></td>";
 		echo "<input name='piezasg_$va' id='piezasg_$va' type='hidden'  value='$rw1[7]'>";
 		echo "<input name='guia_$va' id='guia_$va' type='hidden'  value='$rw1[1]'>";
+		echo "<input name='des_$va' id='des_$va'  type='hidden'  value=''>";
 
 	 }
 
