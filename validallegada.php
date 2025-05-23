@@ -15,7 +15,7 @@ $gnpiezas = explode(" ", $valores);
 $guia=$gnpiezas[0];
 $pieza=$gnpiezas[1];
 
- $sql="SELECT `ser_piezas`,idservicios,ser_estado,ser_desvaliguia,ser_ciudadentrega FROM `servicios` INNER JOIN ciudades on idciudades=ser_ciudadentrega WHERE ser_consecutivo='$guia' and  inner_sedes='$ciudaddes' ";		
+$sql="SELECT `ser_piezas`,idservicios,ser_estado,ser_desvaliguia,ser_ciudadentrega FROM `servicios` INNER JOIN ciudades on idciudades=ser_ciudadentrega WHERE ser_consecutivo='$guia' and  inner_sedes='$ciudaddes' ";		
 $DB1->Execute($sql);
 $rw1=mysqli_fetch_row($DB1->Consulta_ID);
 
@@ -85,7 +85,12 @@ if($idser==''){
 			}
 
 			
-			$datos=array("resultado"  => "2");
+			$datos=array(
+				"resultado"  => "2",
+				"idGuia" => "$guia",
+				"paquete" => "",
+				"piezas" => "$pieza"
+			);
 
 }else if($estado==8){
 	$datos=array("resultado"  => "4");
