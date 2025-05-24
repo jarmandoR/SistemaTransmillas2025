@@ -235,7 +235,7 @@ echo '</table></td></tr></table></div>
 	//   $FB->titulo_azul1("Imprimir",1,0,0); 
 
 
-	   $sql="SELECT `idservicios`, `ser_consecutivo`,`ser_tipopaquete`, ser_piezas,numeropieza
+	   echo$sql="SELECT `idservicios`, `ser_consecutivo`,`ser_tipopaquete`, ser_piezas,numeropieza
 			  FROM serviciosdia inner join piezasguia on ser_consecutivo=numeroguia  where ser_estado in ('8') and guiallega=1 $conde1 $conde  $conde3 ORDER BY ser_fechaguia desc ";
 	 
 	 $DB->Execute($sql); $va=0; 
