@@ -168,6 +168,7 @@ case "datosfacturacion":
 	$FB->llena_texto("Novedades de Factura:",5, 1, $DB, "", "", "$rw[18]", 1, 0);
 
   
+  
   if ($rw[19]!="") {
     
   }
