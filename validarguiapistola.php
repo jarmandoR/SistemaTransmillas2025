@@ -251,7 +251,7 @@ echo '</table></td></tr></table></div>
 			 <td>".$rw1[2]."</td>
 			 <td>".$rw1[4]."</td>
 			 ";
-			 echo "<td align='center' >";
+			//  echo "<td align='center' >";
 			//  echo "<a href='ticketfactura.php?id_param=$id_p&pagina2=validarguiapistola.php' target='_blank'><img src='img/imprimir.png'></a></td>";	
 	 
 
