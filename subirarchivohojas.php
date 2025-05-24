@@ -23,12 +23,12 @@ else {
 	
 }
 echo "</tr>";
-$FB->titulo_azul1("Documentos clienntes",9,0,7);  
+$FB->titulo_azul1("Documentosssssssssss clienntes",9,0,7);  
 echo "</tr>";
 
 
 
-$FB->llena_texto("Nombreeee",1, 9, $DB, "", "", "",1,0);
+$FB->llena_texto("Nombre",1, 9, $DB, "", "", "",1,0);
 $FB->llena_texto("Fecha de vencimiento:", 3, 10, $DB, "", "", "", 17, 0);
 $FB->llena_texto("Documentos:", 2, 6, $DB, "", "", "",1, 0);
 
@@ -87,8 +87,6 @@ while($rw1=mysqli_fetch_row($DB->Consulta_ID))
 		$va++; $p=$va%2;
 		if($p==0){$color="#FFFFFF";} else{$color="#EFEFEF";}
 		echo "<tr class='text' bgcolor='$color' onmouseover='this.style.backgroundColor=\"#C8C6F9\"' onmouseout='this.style.backgroundColor=\"$color\"'>";
-		//if($rw1[1]==0){$rw1[1]='NO';}
-		$telefonos=$rw1[6]." - ".$rw1[7];
 		echo "<td>".$va."</td>
 		<td>".$rw1[1]."</td>
 		<td>".$rw1[2]."</td>
