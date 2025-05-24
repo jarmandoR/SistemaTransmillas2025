@@ -219,7 +219,7 @@ if($param2!="" and $param1!=""){
 		echo "<select  style='width:120px;border:1px solid #f9f9f9;background-color:#074f91;color:#f9f9f9;font-size:15px'  name='$va' id='$va'   class='borrar' required>";
 		$LT->llenaselect_ar("Selecccione...",$estadosguia);
 		echo "</select></div><input name='servicio_$va' id='servicio_$va' type='hidden'  value='$rw1[0]'></td>";
-		echo "<input name='piezasg_$va' id='piezasg_$va' type='hidden'  value='$rw1[7]'>";
+		echo "<input name='piezasg_$va' id='piezasg_$va' type='hidden'  value='$rw1[3]'>";
 		echo "<input name='guia_$va' id='guia_$va' type='hidden'  value='$rw1[1]'>";
 		echo "<input name='des_$va' id='des_$va'  type='hidden'  value=''>";
 
